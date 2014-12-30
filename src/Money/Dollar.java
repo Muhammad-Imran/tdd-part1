@@ -2,11 +2,13 @@ package Money;
 
 public class Dollar {
 	
-    int amount = 10;
+    int amount;
 
 	Dollar(int amount) {
+		this.amount = amount;
 	}
 	
 	public void times(int multiplier) {
+		amount *= multiplier;
 	}
 }
