@@ -1,6 +1,6 @@
 package Money;
 
-public abstract class Money {
+public class Money {
  
 	protected int amount;
 	protected String currency;
@@ -24,10 +24,15 @@ public abstract class Money {
 		return new Franc(amount, "CHF");
 	}
 	
-	abstract Money times(int multiplier);
-	
+	Money times(int amount) {
+		return null;
+	}
 	
 	String currency() {
 		return currency;
+	}
+	
+	public String toString() {
+		return amount + " " + currency;
 	}
 }
