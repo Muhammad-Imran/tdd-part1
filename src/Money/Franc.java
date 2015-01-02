@@ -6,11 +6,11 @@ class Franc extends Money{
 		super(amount, currency);
 	}
 	
-	Money times(int multiplier) {
-		return new Money(amount * multiplier, currency);
-	}
-	
 	String currency() {
 		return currency;
+	}
+	
+	static Money franc(int amount){
+		return new Money(amount, "CHF");
 	}
 }
