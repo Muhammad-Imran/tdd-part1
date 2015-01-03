@@ -1,6 +1,6 @@
 package Money;
 
-public class Money {
+public class Money implements Expression {
  
 	protected int amount;
 	protected String currency;
@@ -34,5 +34,17 @@ public class Money {
 	
 	public String toString() {
 		return amount + " " + currency;
+	}
+	
+	Expression plus(Money addend) {
+		return new Money(amount + addend.amount, currency);
+	}
+	
+	public void testSimpleAddition() {
+		Money five= Money.dollar(5);
+		Expression sum= five.plus(five);
+		Bank bank= new Bank();
+		Money reduced= bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(10), reduced);
 	}
 }
